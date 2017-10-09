@@ -1,0 +1,132 @@
+.container {
+	margin: auto;
+	text-align: center;
+}
+
+.container .button {
+    background-color: #d8cbcb;
+    width: 45px;
+    padding: 2px;
+    text-align: center;
+    border: 4px gray;
+    border-style: outset;
+    cursor: pointer;
+    margin: auto;
+    margin-top: 5px;
+}
+
+#result {
+    margin: auto;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.spinner {
+	margin: auto;
+}
+
+.spinner .marker {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-top: 20px solid red;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 10;
+}
+
+.spinner .circle {
+	background-color: black;
+	cursor: pointer;
+	border-radius: 100%;
+	position: absolute;
+    width: inherit;
+    height: inherit;
+    margin: auto;
+}
+
+.spinner .circle .triangle {
+	width: 0;
+    height: 0;
+    position: inherit;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.spinner .circle .triangle span{
+	position: inherit;
+	color: white;
+	left: -5px;
+}
+
+.spinner .circle .ele {
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 150px solid transparent;
+    position: inherit;
+    margin: auto;
+}
+
+.spinner .circle .ele span {
+	position: inherit;
+	top: -75px;
+	color: white;
+}
+
+.spinner .circle .element1 {
+    border-top-color: black;
+    transform: translate(0px,0px) rotateZ(0deg);
+}
+
+.spinner .circle .element2 {
+    border-top-color: blue;
+    transform: translate(75px,75px) rotateZ(90deg);
+}
+
+.spinner .circle .element3 {
+    border-top-color: orange;
+    transform: translate(0px,150px) rotateZ(180deg);
+}
+
+.spinner .circle .element4 {
+    border-top-color: pink;
+    transform: translate(-75px,75px) rotateZ(270deg);
+}
+
+.spinner .circle .polynomial {
+    width: 0;
+    height: 0;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 150px solid transparent;
+    position: inherit;
+    margin: auto;
+}
+
+.spinner .circle .element5 {
+    border-top-color: rgba(0, 0, 0, 0.61);
+    transform: translate(-150px,0px) rotateZ(0deg);
+}
+
+.spinner .circle .element6 {
+    border-top-color: rgba(0, 0, 255, 0.5);
+    transform: translate(-85px,110px) rotateZ(120deg)
+}
+
+.spinner .circle .element7 {
+    border-top-color: rgba(255, 0, 0, 0.51);
+    transform: translate(-213px,113px) rotateZ(240deg);
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
