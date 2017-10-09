@@ -35,32 +35,32 @@ class Spinner {
 
 	createSpinner(){
 		console.log("Creating spinner with diameter " + this.diameter + " px and " + this.sides + " parts.");
-		let spinnerContainer = document.getElementById('spinner');
+		var spinnerContainer = document.getElementById('spinner');
 		spinnerContainer.innerHTML = '';
 		spinnerContainer.setAttribute("class", "spinner");
 		spinnerContainer.style.width = this.diameter+'px';
 		spinnerContainer.style.height = this.diameter+'px';
 		//====================== creating marker for spinner ============================
-		let marker = document.createElement("div");
+		var marker = document.createElement("div");
 		marker.setAttribute("class", "marker");
 		spinnerContainer.append(marker);
 		//======================== creating spinner circle ==============================
-		let spinnerCircle = document.createElement('div');
+		var spinnerCircle = document.createElement('div');
 		spinnerCircle.setAttribute("class", "circle");
 		spinnerCircle.setAttribute("id", "disc");
 		spinnerContainer.append(spinnerCircle);
-		let cornerAngle = new Angle(90 - 180/this.sides);
-		let sideBy2 = Math.cos(cornerAngle.toRad())*this.diameter/2;
-		let height = Math.sin(cornerAngle.toRad())*this.diameter/2;
-		let yAddOffset = this.diameter/2 - height;
+		var cornerAngle = new Angle(90 - 180/this.sides);
+		var sideBy2 = Math.cos(cornerAngle.toRad())*this.diameter/2;
+		var height = Math.sin(cornerAngle.toRad())*this.diameter/2;
+		var yAddOffset = this.diameter/2 - height;
 		this.items = [];
 		//================== creating triangles inside circle ============================
-		for(let i = 0; i < this.sides; i++){
-			let triangle = document.createElement("div");
+		for(var i = 0; i < this.sides; i++){
+			var triangle = document.createElement("div");
 			triangle.setAttribute("class", "triangle");
-			let xOffset = Math.sin(i*this.suspendedAngle.toRad())*height/2;
-			let yOffset = -1*(Math.cos(i*this.suspendedAngle.toRad())*height*0.5) + height/2 + yAddOffset;
-			let angle = i*this.suspendedAngle.getAngle();
+			var xOffset = Math.sin(i*this.suspendedAngle.toRad())*height/2;
+			var yOffset = -1*(Math.cos(i*this.suspendedAngle.toRad())*height*0.5) + height/2 + yAddOffset;
+			var angle = i*this.suspendedAngle.getAngle();
 			this.items.push({item: i, tilt: angle});
 			triangle.style.transform = "translate(" + xOffset + "px," + yOffset + "px) rotateZ(" + angle + "deg)";
 			triangle.style.borderLeft = sideBy2 + "px solid transparent";
@@ -75,7 +75,7 @@ class Spinner {
 				triangle.style.borderTop = height + "px solid rgba(89, 163, 42, 0.76)";
 			}
 		//=================== text holder inside triangle ================================
-			let textHolder = document.createElement("span");
+			var textHolder = document.createElement("span");
 			textHolder.style.top = -0.85*height+'px';
 			textHolder.innerHTML = i;
 
@@ -98,16 +98,16 @@ class Spinner {
 	}
 
 	_findClosestItem(){
-		// let differences = this.items.map(i=> Math.abs(Math.abs(360-this.rotationAngle) - i.tilt));
-		let differences = this.items.map(item => Math.abs(Math.abs(this.rotationAngle) - item.tilt ));
-		let index = this._minimumInArray(differences);
+		// var differences = this.items.map(i=> Math.abs(Math.abs(360-this.rotationAngle) - i.tilt));
+		var differences = this.items.map(item => Math.abs(Math.abs(this.rotationAngle) - item.tilt ));
+		var index = this._minimumInArray(differences);
 		return index;
 	}
 
 	_minimumInArray(arr){
 		/* returns index of minimum number in provided array */
-		let minIndex = 0
-		for(let i=1; i<arr.length; i++){
+		var minIndex = 0
+		for(var i=1; i<arr.length; i++){
 			if(arr[minIndex] > arr[i]) {
 				minIndex = i;
 			}
