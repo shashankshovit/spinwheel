@@ -13,3 +13,5 @@ function toggleRotation(){
 		window.spinner.startRotating();
 	}
 }
+
+startApp();
